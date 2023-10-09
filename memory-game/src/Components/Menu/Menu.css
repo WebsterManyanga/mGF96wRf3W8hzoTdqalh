@@ -29,6 +29,26 @@ main {
     padding: 1rem 1.75rem;
     border-radius: 30px;
     border: none;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 9px #999
+}
+
+.menu button:hover {
+    background-color: rgb(240, 233, 233);
+    color: #9E5F19;
+    
+}
+
+.menu button:focus {
+    outline: none;
+}
+
+.menu button:active {
+    background-color: #9E5F19;
+    color:#fff;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
 
 @media screen and (min-width: 960px) { 

@@ -6,17 +6,17 @@
 }
 
 .logo img {
-    width: 88%;
+    width: 88vw;
 }
 
 @media screen and (min-width: 480px) {
     .logo img {
-        width: 73%;
+        width: 73vw;
     }
 }
 
 @media screen and (min-width: 960px) {
     .logo img {
-        width: 44%;
+        width: 44vw;
     }
 }

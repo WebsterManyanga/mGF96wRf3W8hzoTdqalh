@@ -1,11 +1,9 @@
 @import './reset.css';
+@import url('https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Manrope:wght@400;500;800&display=swap');
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
+  font-family: 'Darumadrop One', cursive;
   -moz-osx-font-smoothing: grayscale;
   background-color: #87CEEB;
   height: 100vh;

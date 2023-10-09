@@ -1,0 +1,22 @@
+.logo {
+    padding-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    width: 88%;
+}
+
+@media screen and (min-width: 480px) {
+    .logo img {
+        width: 73%;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .logo img {
+        width: 44%;
+    }
+}

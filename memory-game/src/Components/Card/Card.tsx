@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Card.css';
 
-export default function Card() {
+export default function Card({id} : Proptype) {
 
     const [flipCard, setFlipCard] = useState('');
 
@@ -21,9 +21,14 @@ export default function Card() {
             <div className="card__back">
                 <div></div>
             </div>
-            <div className="card__front"></div>
+            <div className="card__front">
+                <h1>{id}</h1>
+            </div>
         </div>
     </div>
   )
 }
 
+interface Proptype {
+    id: number
+}

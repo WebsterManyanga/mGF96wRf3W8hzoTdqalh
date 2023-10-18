@@ -37,7 +37,7 @@ export default function Card({id, position, cardsList, incrementCount, count, re
         resetRef.current = false;
         resetCount();
         SetCardFlippedPosition(-1);
-        setFlipCard('flip_2');
+        setTimeout(() => setFlipCard('flip_2'), 1000);
     }
 
     if (cardFlippedPosition === position && count === 2 && !resetRef.current) {

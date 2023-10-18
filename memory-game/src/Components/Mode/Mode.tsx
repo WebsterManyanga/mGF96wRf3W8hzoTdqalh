@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Mode.css';
 import Card from '../Card/Card';
 import { cardsLibrary } from '../../cardsLibrary';
 import Menu from '../Menu/Menu';
+import { useGlobalState } from '../../state';
 
 export default function Mode({level}: Proptype) {
+  const [randomizedCardsList, setRandomizedCardsList] = useState([]);
+  const [count, setCount] = useState(0);
+  let currentCount = count;
 
   if (level === 'menu') {
     return <Menu />
@@ -19,12 +23,15 @@ export default function Mode({level}: Proptype) {
     case 'medium':
       cardsList.splice(0,3);
       break;
+    case 'hard': 
+      break;
   }
 
   const expandedCardsList = [...cardsList,...cardsList];
-  const randomizedCardsList = randomizeCards(expandedCardsList);
-  const cards = randomizedCardsList.map(card => <Card id={card.id}/>)
-  
+  if (randomizedCardsList.length === 0) {
+    setRandomizedCardsList(randomizeCards(expandedCardsList));
+  } 
+  const cards = randomizedCardsList.map((card, i) => <Card id={card.id} position={i} cardsList={randomizedCardsList} incrementCount={() => setCount(++currentCount)} count={count} resetCount={() => setCount(0)}/>)
   return (
     <main>
       {cards}

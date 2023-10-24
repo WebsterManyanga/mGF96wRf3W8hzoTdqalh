@@ -3,7 +3,7 @@ import './Mode.css';
 import Card from '../Card/Card';
 import { cardsLibrary } from '../../cardsLibrary';
 import Menu from '../Menu/Menu';
-import { useGlobalState } from '../../state';
+import { CardsList } from '../../types';
 
 export default function Mode({level}: Proptype) {
   const [randomizedCardsList, setRandomizedCardsList] = useState([]);
@@ -33,9 +33,9 @@ export default function Mode({level}: Proptype) {
   } 
   const cards = randomizedCardsList.map((card, i) => <Card id={card.id} position={i} cardsList={randomizedCardsList} incrementCount={() => setCount(++currentCount)} count={count} resetCount={() => setCount(0)}/>)
   return (
-    <main>
+    <div className={level}>
       {cards}
-    </main>
+    </div>
   )
 }
 
@@ -72,10 +72,3 @@ const randomizeCards = (cardsList:CardsList) => {
 interface Proptype {
   level: String
 }
-
-interface Card {
-  id: number,
-  img: string,
-  selected: boolean
-}
-type CardsList = Card[];

@@ -11,6 +11,7 @@
     margin: 0 auto;
     gap: 3rem;
     padding: 1.3rem 3.5rem;
+    align-self: center;
 }
 
 .menu button{

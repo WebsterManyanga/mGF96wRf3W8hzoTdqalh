@@ -6,7 +6,6 @@ export default function Card({id, position, cardsList, incrementCount, count, re
 
     const [flipCard, setFlipCard] = useState('flip_2');
     const [cardFlippedPosition, SetCardFlippedPosition] = useGlobalState('cardFlippedPosition');
-    const [reset, setReset] = useGlobalState('reset');
     const resetRef = useRef(false);
 
     const flip = () => {
@@ -67,4 +66,5 @@ export default function Card({id, position, cardsList, incrementCount, count, re
 interface Proptype {
     id: number,
     position: number
+    cardsList: Cards[]
 }

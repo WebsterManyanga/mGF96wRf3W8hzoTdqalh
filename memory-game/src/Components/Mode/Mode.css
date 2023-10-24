@@ -1,3 +1,14 @@
-* {
-    
+.easy {
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 30px;
+    width: 100%;
+    height: fit-content;
+    align-items: center;
+    box-sizing: border-box;
+    align-items: start;
 }
+
+
+
+

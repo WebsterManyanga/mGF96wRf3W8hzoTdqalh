@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import Clouds from './Components/Clouds/Clouds';
 import Logo from './Components/Logo/Logo';
-import Menu from './Components/Menu/Menu';
 import { useGlobalState } from './state';
 import Mode from './Components/Mode/Mode';
 import Timer from './Components/Timer/Timer';

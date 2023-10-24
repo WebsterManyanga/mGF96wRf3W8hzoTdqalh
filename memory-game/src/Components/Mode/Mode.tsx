@@ -31,7 +31,7 @@ export default function Mode({level}: Proptype) {
   if (randomizedCardsList.length === 0) {
     setRandomizedCardsList(randomizeCards(expandedCardsList));
   } 
-  const cards = randomizedCardsList.map((card, i) => <Card id={card.id} position={i} cardsList={randomizedCardsList} incrementCount={() => setCount(++currentCount)} count={count} resetCount={() => setCount(0)}/>)
+  const cards = randomizedCardsList.map((card, i) => <Card key={card.id} id={card.id} position={i} cardsList={randomizedCardsList} incrementCount={() => setCount(++currentCount)} count={count} resetCount={() => setCount(0)} />)
   return (
     <div className={level}>
       {cards}

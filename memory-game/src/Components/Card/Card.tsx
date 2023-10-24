@@ -6,8 +6,8 @@ export default function Card({id, position, cardsList, incrementCount, count, re
 
     const [flipCard, setFlipCard] = useState('flip_2');
     const [cardFlippedPosition, SetCardFlippedPosition] = useGlobalState('cardFlippedPosition');
+    const [scoredId, setScoredId] = useGlobalState('scoredId');
     const resetRef = useRef(false);
-
     const flip = () => {
             flipCard === 'flip_1' ? setFlipCard('flip_2') : setFlipCard('flip_1');
             if (flipCard === 'flip_2') {
@@ -16,7 +16,7 @@ export default function Card({id, position, cardsList, incrementCount, count, re
                     SetCardFlippedPosition(position);
                 } else {
                     if (cardsList[cardFlippedPosition].id === id) {
-                        console.log('score');
+                        setScoredId(prev=> [...prev,id]);
                     } else {
                         console.log('fail');
                         setTimeout(
@@ -34,11 +34,25 @@ export default function Card({id, position, cardsList, incrementCount, count, re
 
     }
     const result = () => {
-        if (flipCard === 'flip_1') {
-            console.log(`count: ${count}`);
-
+            if (flipCard === 'flip_1') {
+                console.log(`count: ${count}`);
+    
+                return (
+                    <div className={`card ${scoredId.includes(id) && 'poof'}`}>
+                    <div className={`card__inner ${flipCard}`}>
+                        <div className="card__back">
+                            <div></div>
+                        </div>
+                        <div className="card__front">
+                            <h1>{id}</h1>
+                        </div>
+                    </div>
+                </div>        
+                )
+            }
+            
             return (
-                <div className='card'>
+                <div className={`card ${scoredId.includes(id) && 'poof'}`} onClick={() => flip()}>
                 <div className={`card__inner ${flipCard}`}>
                     <div className="card__back">
                         <div></div>
@@ -47,23 +61,9 @@ export default function Card({id, position, cardsList, incrementCount, count, re
                         <h1>{id}</h1>
                     </div>
                 </div>
-            </div>        
-            )
-        }
+                </div>
         
-        return (
-            <div className='card' onClick={() => flip()}>
-            <div className={`card__inner ${flipCard}`}>
-                <div className="card__back">
-                    <div></div>
-                </div>
-                <div className="card__front">
-                    <h1>{id}</h1>
-                </div>
-            </div>
-            </div>
-    
-        )
+            )
     }
 
     if (resetRef.current) {
@@ -71,13 +71,12 @@ export default function Card({id, position, cardsList, incrementCount, count, re
         resetRef.current = false;
         resetCount();
         SetCardFlippedPosition(-1);
-        setTimeout(() => setFlipCard('flip_2'), 1000);
+        console.log(`ScoreId: ${scoredId} ------- CurrentId: ${id}`)
+        if (!scoredId.includes(id)) {setTimeout(() => setFlipCard('flip_2'), 1000)};
     }
 
     if (cardFlippedPosition === position && count === 2 && !resetRef.current) {
-        console.log(`Count: ${count}`);    
         resetRef.current = true;
-        console.log(`closing: ${position}`);
         resetCount();
     }
 

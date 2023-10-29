@@ -4,11 +4,16 @@ import Card from '../Card/Card';
 import { cardsLibrary } from '../../cardsLibrary';
 import Menu from '../Menu/Menu';
 import { CardsList } from '../../types';
+import { useGlobalState } from '../../state';
+import GameOver from '../../GameOver/GameOver';
 
 export default function Mode({level}: Proptype) {
   const [randomizedCardsList, setRandomizedCardsList] = useState([]);
   const [count, setCount] = useState(0);
+  const [timeUp, setTimeUp] = useGlobalState('timeUp');
   let currentCount = count;
+
+
 
   if (level === 'menu') {
     return <Menu />
@@ -33,9 +38,12 @@ export default function Mode({level}: Proptype) {
   } 
   const cards = randomizedCardsList.map((card, i) => <Card key={card.id} id={card.id} position={i} cardsList={randomizedCardsList} incrementCount={() => setCount(++currentCount)} count={count} resetCount={() => setCount(0)} />)
   return (
-    <div className={level}>
-      {cards}
-    </div>
+    <>
+      <div className={level}>
+        {timeUp && <GameOver />}
+        {cards}
+      </div>
+    </>
   )
 }
 

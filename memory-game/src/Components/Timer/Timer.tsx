@@ -1,8 +1,23 @@
 import React from 'react';
 import './Timer.css';
 import Countdown from 'react-countdown';
+import { useGlobalState } from '../../state';
 
 export default function Timer() {
+  const [timeUp, setTimeUp] = useGlobalState('timeUp');
+  const renderer = ({hours, minutes, seconds, completed}:RendererType) => {
+    if (minutes === 1) {
+      return <span>60</span>
+    }
+    if (completed) {
+      setTimeUp(true);
+      return 'Time-Up';
+    }
+    else {
+      return <span>{seconds}</span>
+    }
+  } 
+  
   return (
     <div className='timer'>
       <div className="counter">
@@ -10,20 +25,11 @@ export default function Timer() {
       </div>
     </div>
   )
+
+  
 }
 
 
-const renderer = ({hours, minutes, seconds, completed}:RendererType) => {
-  if (minutes === 1) {
-    return <span>60</span>
-  }
-  if (completed) {
-    return 'Done';
-  }
-  else {
-    return <span>{seconds}</span>
-  }
-} 
 
 interface RendererType {
   hours: number,

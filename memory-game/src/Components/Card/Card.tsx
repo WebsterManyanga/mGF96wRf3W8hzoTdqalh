@@ -8,6 +8,10 @@ export default function Card({id, position, cardsList, incrementCount, count, re
     const [cardFlippedPosition, SetCardFlippedPosition] = useGlobalState('cardFlippedPosition');
     const [scoredId, setScoredId] = useGlobalState('scoredId');
     const resetRef = useRef(false);
+
+    if (scoredId.length === cardsList.length / 2) {
+        console.log('WINNER');
+    } 
     const flip = () => {
             flipCard === 'flip_1' ? setFlipCard('flip_2') : setFlipCard('flip_1');
             if (flipCard === 'flip_2') {
@@ -18,7 +22,6 @@ export default function Card({id, position, cardsList, incrementCount, count, re
                     if (cardsList[cardFlippedPosition].id === id) {
                         setScoredId(prev=> [...prev,id]);
                     } else {
-                        console.log('fail');
                         setTimeout(
                             () => {
                                 setFlipCard('flip_2');
@@ -35,7 +38,6 @@ export default function Card({id, position, cardsList, incrementCount, count, re
     }
     const result = () => {
             if (flipCard === 'flip_1') {
-                console.log(`count: ${count}`);
     
                 return (
                     <div className={`card ${scoredId.includes(id) && 'poof'}`}>
@@ -71,7 +73,6 @@ export default function Card({id, position, cardsList, incrementCount, count, re
         resetRef.current = false;
         resetCount();
         SetCardFlippedPosition(-1);
-        console.log(`ScoreId: ${scoredId} ------- CurrentId: ${id}`)
         if (!scoredId.includes(id)) {setTimeout(() => setFlipCard('flip_2'), 1000)};
     }
 

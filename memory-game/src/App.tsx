@@ -7,15 +7,25 @@ import Mode from './Components/Mode/Mode';
 import Timer from './Components/Timer/Timer';
 
 function App() {
-  const [currentScene, setCurrentScene] = useGlobalState('scene');
+  const [scene, setScene] = useGlobalState('scene');
+  const [prevScene, setPrevScene] = useGlobalState('previousScene');
+  const [timeUp, setTimeUp] = useGlobalState('timeUp');
+
+  let level = scene;
+  if (scene === 'restart') {
+    level = prevScene;
+    setScene(prevScene)
+    setPrevScene('');
+    setTimeUp(false);
+  }
   
   return (
     <div className="App">
       <Clouds />
       <Logo />
-      {currentScene !== 'menu' && <Timer />}
+      {level !== 'menu' && !timeUp && <Timer />}
       <main>
-        <Mode level={currentScene} />
+        <Mode level={level} />
       </main>
     </div>
   );

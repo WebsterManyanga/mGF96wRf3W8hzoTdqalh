@@ -6,6 +6,7 @@ import Menu from '../Menu/Menu';
 import { CardsList } from '../../types';
 import { useGlobalState } from '../../state';
 import GameOver from '../../GameOver/GameOver';
+import Timer from '../Timer/Timer';
 
 export default function Mode({level}: Proptype) {
   const [randomizedCardsList, setRandomizedCardsList] = useState([]);

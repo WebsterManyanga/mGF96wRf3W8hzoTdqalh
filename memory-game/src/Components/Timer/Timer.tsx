@@ -21,7 +21,7 @@ export default function Timer() {
   return (
     <div className='timer'>
       <div className="counter">
-        <Countdown date={Date.now() + 5000} renderer={renderer}/>
+        <Countdown date={Date.now() + 10000} renderer={renderer}/>
       </div>
     </div>
   )

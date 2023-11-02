@@ -12,12 +12,7 @@ function App() {
   const [timeUp, setTimeUp] = useGlobalState('timeUp');
 
   let level = scene;
-  if (scene === 'restart') {
-    level = prevScene;
-    setScene(prevScene)
-    setPrevScene('');
-    setTimeUp(false);
-  }
+
   
   return (
     <div className="App">

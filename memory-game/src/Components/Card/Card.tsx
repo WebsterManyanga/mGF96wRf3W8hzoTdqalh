@@ -1,8 +1,9 @@
 import React, { useRef, useState } from 'react';
 import './Card.css';
 import { useGlobalState } from '../../state';
+import cardBg from '../../assets/background.jpg';
 
-export default function Card({id, position, cardsList, incrementCount, count, resetCount} : Proptype) {
+export default function Card({id, position, cardsList, incrementCount, count, resetCount, img} : Proptype) {
 
     const [flipCard, setFlipCard] = useState('flip_2');
     const [cardFlippedPosition, SetCardFlippedPosition] = useGlobalState('cardFlippedPosition');
@@ -58,10 +59,10 @@ export default function Card({id, position, cardsList, incrementCount, count, re
                     <div className={`card ${poof}`}>
                     <div className={`card__inner ${flipCard} `}>
                         <div className="card__back">
-                            <div></div>
+                            <img src={cardBg} alt="card" />
                         </div>
                         <div className="card__front">
-                            <h1>{id}</h1>
+                            <img src={img} alt="card" />
                         </div>
                     </div>
                 </div>        
@@ -72,10 +73,10 @@ export default function Card({id, position, cardsList, incrementCount, count, re
                 <div className={`card ${poof}`} onClick={() => flip()}>
                 <div className={`card__inner ${flipCard}`}>
                     <div className="card__back">
-                        <div></div>
+                    <img src={cardBg} alt="card" />
                     </div>
                     <div className="card__front">
-                        <h1>{id}</h1>
+                        <img src={img} alt="" />
                     </div>
                 </div>
                 </div>
@@ -106,6 +107,6 @@ export default function Card({id, position, cardsList, incrementCount, count, re
 
 interface Proptype {
     id: number,
-    position: number
+    position: number,
     cardsList: Cards[]
 }

@@ -11,21 +11,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 960px) {
     .timer {
-        position: absolute;
-        top: 20px;
-        right: 24px;
+        margin: 2px;
         width: 73px;
         height: 73px;
     }
 
 }
 
-@media screen and (min-width: 960px) {
-    .timer {
-        right: 49px;
-    }
-}

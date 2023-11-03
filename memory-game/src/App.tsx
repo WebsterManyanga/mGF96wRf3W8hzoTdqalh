@@ -17,9 +17,9 @@ function App() {
   return (
     <div className="App">
       <Clouds />
-      <Logo />
+      {level === 'menu' && <Logo />}
       {level !== 'menu' && !timeUp && <Timer />}
-      <main>
+      <main className={level === 'menu' && 'main-menu'}>
         <Mode level={level} />
       </main>
     </div>

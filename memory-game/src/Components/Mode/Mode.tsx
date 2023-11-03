@@ -54,13 +54,16 @@ export default function Mode({level}: Proptype) {
   if (randomizedCardsList.length === 0) {
     setRandomizedCardsList(randomizeCards(expandedCardsList));
   } 
-  const cards = randomizedCardsList.map((card, i) => <Card id={card.id} position={i} cardsList={randomizedCardsList} incrementCount={() => setCount(++currentCount)} count={count} resetCount={() => setCount(0)} />)
+  const cards = randomizedCardsList.map((card, i) => <Card id={card.id} position={i} cardsList={randomizedCardsList} incrementCount={() => setCount(++currentCount)} count={count} resetCount={() => setCount(0)} img={card.img} />)
   return (
     <>
-      <div className={level}>
+      <div className='level'>
         {timeUp && <GameOver />}
         {win && <Winner />}
-        {cards}
+        <div className={level}>
+          {cards}
+        </div>
+
       </div>
     </>
   )

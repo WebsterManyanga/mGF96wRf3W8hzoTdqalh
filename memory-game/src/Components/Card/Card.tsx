@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import './Card.css';
 import { useGlobalState } from '../../state';
 import cardBg from '../../assets/background.jpg';
+import { CardsList } from '../../types';
 
 export default function Card({id, position, cardsList, incrementCount, count, resetCount, img} : Proptype) {
 
@@ -108,5 +109,9 @@ export default function Card({id, position, cardsList, incrementCount, count, re
 interface Proptype {
     id: number,
     position: number,
-    cardsList: Cards[]
+    cardsList: CardsListgit ,
+    incrementCount: () => void,
+    count: number,
+    resetCount: () => void,
+    img: string
 }

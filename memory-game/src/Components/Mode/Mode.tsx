@@ -73,5 +73,5 @@ export default function Mode({level}: Proptype) {
 
 
 interface Proptype {
-  level: String
+  level: string
 }

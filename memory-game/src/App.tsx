@@ -19,7 +19,7 @@ function App() {
       <Clouds />
       {level === 'menu' && <Logo />}
       {level !== 'menu' && !timeUp && <Timer />}
-      <main className={level === 'menu' && 'main-menu'}>
+      <main className={`${level === 'menu' && 'main-menu'}`}>
         <Mode level={level} />
       </main>
     </div>

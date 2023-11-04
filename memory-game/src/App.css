@@ -1,0 +1,17 @@
+.App {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+main {
+    width: 100%;
+}
+
+.main-menu {
+    display: flex;
+}
+

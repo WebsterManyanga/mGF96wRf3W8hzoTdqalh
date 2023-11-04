@@ -1,0 +1,63 @@
+
+
+.menu {
+    box-sizing: border-box;
+    max-height: 100%;
+    border: 4px solid #9E5F19;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    gap: 3rem;
+    padding: 1.3rem 3.5rem;
+    align-self: center;
+}
+
+.menu button{
+    font-family: 'Darumadrop One', cursive;
+    color: #FFF;
+    text-align: center;
+    font-family: Darumadrop One;
+    font-size: 2.3rem;
+    font-weight: 400;
+    background-color: #9E5F19;
+    padding: 1rem 1.75rem;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 9px #999
+}
+
+.menu button:hover {
+    background-color: rgb(240, 233, 233);
+    color: #9E5F19;
+    
+}
+
+.menu button:focus {
+    outline: none;
+}
+
+.menu button:active {
+    background-color: #9E5F19;
+    color:#fff;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+@media screen and (min-width: 960px) { 
+
+    main {
+        align-items: flex-start;
+    }
+
+    .menu {
+        width: 100%;
+        border: none;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+}

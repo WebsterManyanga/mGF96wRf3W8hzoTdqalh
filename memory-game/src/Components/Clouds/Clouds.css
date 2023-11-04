@@ -1,0 +1,68 @@
+.clouds {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+
+.clouds__batch {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.batch1 {
+    animation: cloudsbatch1 15s linear infinite normal;
+
+}
+
+.batch2 {
+    animation: cloudsbatch2 15s linear infinite normal;    
+}
+
+@keyframes cloudsbatch1 {
+    from {
+        transform: translateX(0vw);
+    }
+
+    to {
+        transform: translateX(100vw);
+    }
+}
+@keyframes cloudsbatch2 {
+    from {
+        transform: translateX(-100vw);
+    }
+
+    to {
+        transform: translateX(0vw);
+    }
+}
+.cloud {
+    position: relative;
+    width: 50%;
+    height: auto;
+}
+
+.cloud img {
+    width: 60%;
+    height: 60%;
+}
+
+.cloud::after {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 50%;
+    background-image: url('../../assets/cloud.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+}
+

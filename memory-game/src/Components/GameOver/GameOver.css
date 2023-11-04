@@ -1,0 +1,60 @@
+.game-over {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 2;
+    background-color:#87CEEB;
+    height: 100vh;
+    top: 0;
+}
+
+.game-over h1 {
+    font-size: 80px;
+    color: red;
+    text-shadow: #666 5px 5px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+
+
+.game-over button{
+    font-family: 'Darumadrop One', cursive;
+    color: #FFF;
+    text-align: center;
+    font-family: Darumadrop One;
+    font-size: 2.3rem;
+    font-weight: 400;
+    background-color: #9E5F19;
+    padding: 1rem 1.75rem;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 9px #999
+}
+
+
+.game-over button:focus {
+    outline: none;
+}
+
+.game-over button:active {
+    background-color: #9E5F19;
+    color:#fff;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+
+.game-over__options {
+    margin-top: 20vh;
+    width: 100%;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+}   
+

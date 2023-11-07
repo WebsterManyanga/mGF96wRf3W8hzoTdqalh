@@ -12,7 +12,7 @@ import rigby from './assets/Rigby.jpg'
 import riley from './assets/Riley.jpg'
 import scooby from './assets/Scooby.jpg'
 import stewie from './assets/Stewie.jpg'
-import teenTitans from './assets/TeenTitans.jpg'
+import teenTitans from './assets/IMG-20230218-WA0001-fotor-2023110724623.jpg'
 
 
 export const cardsLibrary = [

@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/mGF96wRf3W8hzoTdqalh/static/css/main.8324686b.css",
-    "main.js": "/mGF96wRf3W8hzoTdqalh/static/js/main.4bd6c2ae.js",
+    "main.js": "/mGF96wRf3W8hzoTdqalh/static/js/main.bf1dc9fb.js",
     "static/js/787.69b12325.chunk.js": "/mGF96wRf3W8hzoTdqalh/static/js/787.69b12325.chunk.js",
     "static/media/background.jpg": "/mGF96wRf3W8hzoTdqalh/static/media/background.6288118a3ad3e5ea20c7.jpg",
-    "static/media/IMG-20230218-WA0001-fotor-2023110724623.jpg": "/mGF96wRf3W8hzoTdqalh/static/media/IMG-20230218-WA0001-fotor-2023110724623.c4c1f790dd11b38ca40e.jpg",
+    "static/media/TeenTitans.jpg": "/mGF96wRf3W8hzoTdqalh/static/media/TeenTitans.24b9609c1b3a71481046.jpg",
     "static/media/Deadpool.jpg": "/mGF96wRf3W8hzoTdqalh/static/media/Deadpool.71a455e537d4699c898a.jpg",
     "static/media/Patrick.jpg": "/mGF96wRf3W8hzoTdqalh/static/media/Patrick.4e03dbfda40908a85608.jpg",
     "static/media/Grandad.jpg": "/mGF96wRf3W8hzoTdqalh/static/media/Grandad.e70885addc5df1a8de62.jpg",
@@ -23,11 +23,11 @@
     "index.html": "/mGF96wRf3W8hzoTdqalh/index.html",
     "static/media/cloud.svg": "/mGF96wRf3W8hzoTdqalh/static/media/cloud.78247adfa3550f8eb2bfa2ca9401926d.svg",
     "main.8324686b.css.map": "/mGF96wRf3W8hzoTdqalh/static/css/main.8324686b.css.map",
-    "main.4bd6c2ae.js.map": "/mGF96wRf3W8hzoTdqalh/static/js/main.4bd6c2ae.js.map",
+    "main.bf1dc9fb.js.map": "/mGF96wRf3W8hzoTdqalh/static/js/main.bf1dc9fb.js.map",
     "787.69b12325.chunk.js.map": "/mGF96wRf3W8hzoTdqalh/static/js/787.69b12325.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8324686b.css",
-    "static/js/main.4bd6c2ae.js"
+    "static/js/main.bf1dc9fb.js"
   ]
 }

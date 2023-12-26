@@ -109,7 +109,7 @@ export default function Card({id, position, cardsList, incrementCount, count, re
 interface Proptype {
     id: number,
     position: number,
-    cardsList: CardsListgit ,
+    cardsList: CardsList ,
     incrementCount: () => void,
     count: number,
     resetCount: () => void,
